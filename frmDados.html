@@ -1,0 +1,223 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dados</title>
+    <script>
+        function processo()
+        {
+            var prontuario, nome, email, curso, dataIng, extensao, nivSat, periodo;
+
+            prontuario = document.Dados.txtPront.value;
+            nome = document.Dados.txtNome.value;
+            email = document.Dados.txtEmail.value;
+            curso = document.Dados.lstCurso.value;
+            periodo = document.Dados.radPer.value;
+            dataIng = document.Dados.dataIng.value;
+            extensao = "";
+            extensao += (document.Dados.interesse1.checked?"<input type='checkbox' checked>" + document.Dados.interesse1.value +"<br>":"");
+            extensao += (document.Dados.interesse2.checked?"<input type='checkbox' checked>" + document.Dados.interesse2.value + "<br>":"");
+            extensao += (document.Dados.interesse3.checked?"<input type='checkbox' checked>" + document.Dados.interesse3.value:"");
+            nivSat = document.Dados.nivSat.value;
+
+            if (curso == "A")
+            {
+                curso = "Técnico em Automação Industrial";
+            }
+
+            else if (curso == "I")
+            {
+                curso = "Técnico em Informática";
+            }
+
+            else if (curso == "E")
+
+            {
+                curso = "Técnico em Eventos";
+            }
+
+            else if (curso == "L")
+
+            {
+                curso = "Licenciatura em Letras";
+            }
+
+            else if (curso == "M")
+
+            {
+                curso = "Licenciatura em Matemática";
+            }
+
+            
+            document.write("<font face='Arial' size= 4'>");
+
+            document.write(
+                "<div style='border: 1px solid; width: 81px; height: 81px; position: absolute'>", 
+                "<img src='ifsp.png' width='81' height='81'>", 
+                "</div>"
+                );
+
+            document.write(
+                "<div style='border: 1px solid; width: 519px; height: 81px; position: relative;'>",
+                "</div>"
+            );
+
+            document.write(
+                "<div style='border: 1px solid; width: 280px; height: 20px; position: absolute;'>",
+                "Prontuário: "+ prontuario,
+                "</div>"
+            );
+
+            document.write(
+                "<div style='border: 1px solid; width: 237px; height: 20px; position: relative; left: 282px;'>",
+                "Nível de satisfação: "+ nivSat,
+                "</div>"
+            );
+
+            document.write(
+                "<div style='border: 1px solid; width: 519px; height: 20px; position: relative;'>",
+                "Nome: "+ nome,
+                "</div>"
+            );
+
+            document.write(
+                "<div style='border: 1px solid; width: 519px; height: 20px; position: relative;'>",
+                "E-mail: "+ email,
+                "</div>"
+            );
+
+            document.write(
+                "<div style='border: 1px solid; width: 345px; height: 20px; position: absolute;'>",
+                "Curso: "+ curso,
+                "</div>"
+            );
+
+            document.write(
+                "<div style='border: 1px solid; width: 173px; height: 20px; position: relative; left: 346px;'>",
+                "Ingresso: "+ dataIng,
+                "</div>"
+            );
+
+            document.write(
+                "<div style='border: 1px solid; width: 519px; height: 20px; position: relative;'>",
+                "Período: " ,
+                "</div>"
+            );
+
+            if (periodo=="M")
+            {
+                periodo = "<input type='radio' name='radPer' value='M' checked> Manhã";
+                document.write(
+                "<div style='border: 1px solid; width: 173px; height: 20px; position: abosulte;'>",
+                 periodo,
+                "</div>"
+                );
+
+                document.write(
+                "<div style='border: 1px solid; width: 173px; height: 20px; position: relative; left: 174px; bottom: 22px;'>",
+                "<input type='radio' name='radPer' value='T' disabled> Tarde",
+                "</div>"
+                );
+
+                document.write(
+                "<div style='border: 1px solid; width: 171px; height: 20px; position: relative; left: 348px; bottom: 44px;'>",
+                "<input type='radio' name='radPer' value='N' disabled> Noite",
+                "</div>"
+                );
+            }
+
+            else if (periodo == "T")
+
+            {
+                periodo = "<input type='radio' name='radPer' value='T' checked> Tarde";
+
+                document.write(
+                "<div style='border: 1px solid; width: 173px; height: 20px; position: abosulte;'>",
+                "<input type='radio' name='radPer' value='M' disabled> Manhã",
+                "</div>"
+                );
+
+                document.write(
+                "<div style='border: 1px solid; width: 173px; height: 20px; position: relative; left: 174px; bottom: 22px;'>",
+                periodo,
+                "</div>"
+                );
+
+                document.write(
+                "<div style='border: 1px solid; width: 171px; height: 20px; position: relative; left: 348px; bottom: 44px;'>",
+                "<input type='radio' name='radPer' value='N' disabled> Noite",
+                "</div>"
+                );
+                
+            }
+
+            else
+
+            {
+                periodo = "<input type='radio' name='radPer' value='N' checked> Noite";
+
+                document.write(
+                "<div style='border: 1px solid; width: 173px; height: 20px; position: abosulte;'>",
+                "<input type='radio' name='radPer' value='M' disabled> Manhã",
+                "</div>"
+                );
+
+                document.write(
+                "<div style='border: 1px solid; width: 173px; height: 20px; position: relative; left: 174px; bottom: 22px;'>",
+                    "<input type='radio' name='radPer' value='T' disabled> Tarde",
+                "</div>"
+                );
+
+                document.write(
+                "<div style='border: 1px solid; width: 171px; height: 20px; position: relative; left: 348px; bottom: 44px;'>",
+                periodo,
+                "</div>"
+                );
+            }
+
+            document.write(
+                "<div style='border: 1px solid; width: 519px; height: 100px; position: relative; bottom: 44px;'>",
+                "Atividades de extensão:<br>",
+                extensao,
+                "</div>"
+                );
+
+        }
+    </script>
+</head>
+<body>
+    <form name="Dados">
+        Prontuário: <input type="text" name="txtPront" value=""><br>
+        
+        Nome: <input type="text" name="txtNome" value=""><br>
+
+        E-mail Institucional: <input type="email" name="txtEmail" value=""><br>
+
+        Curso:
+            <select name="lstCurso">
+                <option value="A">Técnico em Automação Industrial</option>
+                <option value="E">Técnico em Eventos</option>
+                <option value="I">Técnico em Informática</option>
+                <option value="L">Licenciatura em Letras</option>
+                <option value="M">Licenciatura em Matemática</option>    
+            </select><br>
+
+        Período:
+              <input type="radio" name="radPer" value="M" checked>Manhã
+              <input type="radio" name="radPer" value="T"> Tarde
+              <input type="radio" name="radPer" value="N"> Noite<br>
+
+        Data de ingresso: <input type="date" name="dataIng"><br>
+
+        Extensão:<br>
+              <input type="checkbox" name="interesse1" value="Musicas">Músicas<br>
+              <input type="checkbox" name="interesse2" value="Pintura">Pintura<br>
+              <input type="checkbox" name="interesse3" value="Teatro">Teatro<br>
+
+        Nível de satisfação: <input type="range" name="nivSat" min="0" max="100"><br>
+
+        <input type="button" value="OK" onclick="processo();">
+        <input type="reset" value="Limpar"><br>
+    </form>
+    
+</body>
+</html>
